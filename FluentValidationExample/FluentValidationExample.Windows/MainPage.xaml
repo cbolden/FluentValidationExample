@@ -7,7 +7,37 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid RenderTransformOrigin="0.436,0.54">
+    	<Grid.Background>
+    		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+    			<GradientStop Color="Black" Offset="0"/>
+    			<GradientStop Color="#FF576B95" Offset="1"/>
+    		</LinearGradientBrush>
+    	</Grid.Background>
+    	<Grid.RowDefinitions>
+    		<RowDefinition Height="214*"/>
+    		<RowDefinition Height="59*"/>
+    		<RowDefinition Height="56*"/>
+    		<RowDefinition Height="44*"/>
+    		<RowDefinition Height="69*"/>
+    		<RowDefinition Height="326*"/>
+    	</Grid.RowDefinitions>
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition Width="265*"/>
+    		<ColumnDefinition Width="159*"/>
+    		<ColumnDefinition Width="367*"/>
+    		<ColumnDefinition Width="355*"/>
+    		<ColumnDefinition Width="220*"/>
+    	</Grid.ColumnDefinitions>
+    	<Button x:Name="Submit" Content="Submit" Grid.Column="2" HorizontalAlignment="Left" Margin="227,34,0,0" Grid.Row="5" VerticalAlignment="Top" Height="38" Width="107" Background="#FF5D1818" Click="Submit_Click"/>
+    	<TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="10,20,0,0" Grid.Row="1" TextWrapping="Wrap" Text="16 digit account number" VerticalAlignment="Top" Width="347" Height="32" TextAlignment="Center"/>
+    	<TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="10,19,0,0" Grid.Row="2" TextWrapping="Wrap" Text="4 digit access code" VerticalAlignment="Top" Width="347" Height="32" TextAlignment="Center"/>
+    	<TextBox x:Name="Email" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="3" TextWrapping="Wrap" Text="email" VerticalAlignment="Top" Width="347" Height="32" TextAlignment="Center"/>
+    	<TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,20,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Account Number" VerticalAlignment="Top" Width="139" Height="32" Background="{x:Null}" Foreground="#FF8FE45E" TextAlignment="Right"/>
+    	<TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,19,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Access Code" VerticalAlignment="Top" Width="139" Height="32" Background="{x:Null}" Foreground="#FF8FE45E" TextAlignment="Right"/>
+    	<TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="139" Height="32" Foreground="#FF8FE45E" Background="{x:Null}" TextAlignment="Right"/>
+    	<TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,27,0,0" Grid.Row="4" TextWrapping="Wrap" Text="Email Confirm" VerticalAlignment="Top" Width="139" Height="32" Background="{x:Null}" Foreground="#FF8FE45E" TextAlignment="Right"/>
+    	<TextBox x:Name="EmailConfirm" Grid.Column="2" HorizontalAlignment="Left" Margin="10,27,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="347" Height="32" PlaceholderText="confirm email" TextAlignment="Right" RenderTransformOrigin="0.519,0.562"/>
 
     </Grid>
 </Page>
