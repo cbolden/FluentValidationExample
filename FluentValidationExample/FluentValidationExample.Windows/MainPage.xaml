@@ -7,7 +7,56 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.112*"/>
+            <RowDefinition Height="0.081*"/>
+            <RowDefinition Height="0.058*"/>
+            <RowDefinition Height="0.054*"/>
+            <RowDefinition Height="0.052*"/>
+            <RowDefinition Height="0.056*"/>
+            <RowDefinition Height="0.056*"/>
+            <RowDefinition Height="0.529*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.333*"/>
+            <ColumnDefinition Width="0.022*"/>
+            <ColumnDefinition Width="0.312*"/>
+            <ColumnDefinition Width="0.333*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Blue" Offset="1"/>
+                <GradientStop Color="Green"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBlock Text="User Name" FontSize="20" TextWrapping="Wrap" Margin="0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBlock x:Name="namvalidate" FontSize="20" Foreground="Red" TextWrapping="Wrap" Margin="0" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="Collapsed"/>
+        <TextBlock HorizontalAlignment="Right" FontSize="20" Margin="0" VerticalAlignment="Center" Grid.Row="3" Text="Email ID" TextWrapping="Wrap"/>
+        <TextBlock x:Name="emailvalidate" FontSize="20" Foreground="Red" TextWrapping="Wrap" Margin="0" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="Collapsed"/>
+        <TextBlock HorizontalAlignment="Right" FontSize="20" Margin="0" VerticalAlignment="Center" Grid.Row="4" Text="Password" TextWrapping="Wrap"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0" FontSize="20" VerticalAlignment="Center" Grid.Row="5" Text="Age" TextWrapping="Wrap"/>
+        <TextBlock x:Name="agevalidate" FontSize="20" Foreground="Red" TextWrapping="Wrap" Margin="0" Grid.Column="3" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="Collapsed"/>
+        <TextBox x:Name="txtUserName" TextWrapping="Wrap" Margin="0" Grid.Column="2" Grid.Row="2" d:LayoutOverrides="Height" VerticalAlignment="Center">
+            <TextBox.Text>
+                <Binding Mode="TwoWay" Path="UserName" />
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="txtEmailID" Margin="0" VerticalAlignment="Center" Grid.Column="2" Grid.Row="3" TextWrapping="Wrap">
+            <TextBox.Text>
+                <Binding Mode="TwoWay" Path="EmailID" />
+            </TextBox.Text>
+        </TextBox>
+        <PasswordBox x:Name="txtPassConf" Margin="0" VerticalAlignment="Center" Grid.Column="2" Grid.Row="4">
+            <PasswordBox.Password>
+                <Binding Mode="TwoWay" Path="Password" />
+            </PasswordBox.Password>
+        </PasswordBox>
+        <TextBox x:Name="txtAge" Margin="0" VerticalAlignment="Center" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap">
+            <TextBox.Text>
+                <Binding Mode="TwoWay" Path="Age" />
+            </TextBox.Text>
+        </TextBox>
+        <Button Grid.Column="2" Grid.Row="6"  Content="Save Data" Background="Red" HorizontalAlignment="Center"></Button>
     </Grid>
 </Page>
