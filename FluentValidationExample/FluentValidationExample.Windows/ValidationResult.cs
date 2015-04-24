@@ -6,9 +6,11 @@ using FluentValidation;
 
 namespace FluentValidationExample
     {
-    public class ValidationResult :AbstractValidator<Customer>
+    public class ValidationResult
         {
-         
 
+        public bool IsValid { get; set; }
+        public bool Errors { get; set; }
         }
+   
     }

@@ -30,33 +30,42 @@
                 <GradientStop Color="Green"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <TextBlock Text="User Name" FontSize="20" TextWrapping="Wrap" Margin="0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <!--label-->
+        <TextBlock Text="Account Number" FontSize="20" TextWrapping="Wrap" Margin="0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center"/>
         <TextBlock x:Name="namvalidate" FontSize="20" Foreground="Red" TextWrapping="Wrap" Margin="0" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="Collapsed"/>
-        <TextBlock HorizontalAlignment="Right" FontSize="20" Margin="0" VerticalAlignment="Center" Grid.Row="3" Text="Email ID" TextWrapping="Wrap"/>
+        <!--email label-->
+        <TextBlock HorizontalAlignment="Right" FontSize="20" Margin="0" VerticalAlignment="Center" Grid.Row="3" Text="Access Code" TextWrapping="Wrap"/>
         <TextBlock x:Name="emailvalidate" FontSize="20" Foreground="Red" TextWrapping="Wrap" Margin="0" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="Collapsed"/>
-        <TextBlock HorizontalAlignment="Right" FontSize="20" Margin="0" VerticalAlignment="Center" Grid.Row="4" Text="Password" TextWrapping="Wrap"/>
-        <TextBlock HorizontalAlignment="Right" Margin="0" FontSize="20" VerticalAlignment="Center" Grid.Row="5" Text="Age" TextWrapping="Wrap"/>
+        <!--password label-->
+        <TextBlock HorizontalAlignment="Right" FontSize="20" Margin="0" VerticalAlignment="Center" Grid.Row="4" Text="Email" TextWrapping="Wrap"/>
+        <!--age label-->
+        <TextBlock HorizontalAlignment="Right" Margin="0" FontSize="20" VerticalAlignment="Center" Grid.Row="5" Text="Email Confirm" TextWrapping="Wrap"/>
         <TextBlock x:Name="agevalidate" FontSize="20" Foreground="Red" TextWrapping="Wrap" Margin="0" Grid.Column="3" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="Collapsed"/>
+        <!--username input-->
         <TextBox x:Name="txtUserName" TextWrapping="Wrap" Margin="0" Grid.Column="2" Grid.Row="2" d:LayoutOverrides="Height" VerticalAlignment="Center">
             <TextBox.Text>
                 <Binding Mode="TwoWay" Path="UserName" />
             </TextBox.Text>
         </TextBox>
+        <!--emailinput-->
         <TextBox x:Name="txtEmailID" Margin="0" VerticalAlignment="Center" Grid.Column="2" Grid.Row="3" TextWrapping="Wrap">
             <TextBox.Text>
                 <Binding Mode="TwoWay" Path="EmailID" />
             </TextBox.Text>
         </TextBox>
+        <!--password input-->
         <PasswordBox x:Name="txtPassConf" Margin="0" VerticalAlignment="Center" Grid.Column="2" Grid.Row="4">
             <PasswordBox.Password>
                 <Binding Mode="TwoWay" Path="Password" />
             </PasswordBox.Password>
         </PasswordBox>
+        <!--age input-->
         <TextBox x:Name="txtAge" Margin="0" VerticalAlignment="Center" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap">
             <TextBox.Text>
                 <Binding Mode="TwoWay" Path="Age" />
             </TextBox.Text>
         </TextBox>
-        <Button Grid.Column="2" Grid.Row="6"  Content="Save Data" Background="Red" HorizontalAlignment="Center"></Button>
+        <!--submit button-->
+        <Button x:Name="Submit_Button" Grid.Column="2" Grid.Row="6"  Content="Submit" Background="Red" HorizontalAlignment="Center" FontFamily="Global User Interface" Click="Submit_Button_Click"  ></Button>
     </Grid>
 </Page>

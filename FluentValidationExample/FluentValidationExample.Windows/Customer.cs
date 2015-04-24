@@ -7,6 +7,7 @@ using FluentValidation;
 
 namespace FluentValidationExample
     {
+    //the main class being validated
   public class Customer
         {
         public int AccountNum { get; set; }

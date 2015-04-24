@@ -6,9 +6,8 @@ using FluentValidation;
 
 namespace FluentValidationExample
     {
-   public class ValidationFailure : AbstractValidator<Customer>
+    public class ValidationFailure
         {
-
 
         }
     }
