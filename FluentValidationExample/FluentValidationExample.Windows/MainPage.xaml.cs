@@ -27,16 +27,25 @@ namespace FluentValidationExample
         public MainPage( )
             {
             this.InitializeComponent( );
+
             }
 
-     private void Submit_Button_Click(object sender, RoutedEventArgs e)
+        public FluentValidation.Results.ValidationResult ValidationResults { get; set; }
+
+        //Submitbutton event handler
+        private void Submit_Button_Click(object sender, RoutedEventArgs e)
             {
             Customer customer = new Customer( );
             CustomerValidator validator = new CustomerValidator( );
-
+            ValidationResults = validator.Validate(customer);
             validator.ValidateAndThrow(customer);
-            }
 
+            
+
+            }
+       
+
+       
         }
 
     }
