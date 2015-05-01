@@ -17,28 +17,43 @@ using FluentValidation;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace FluentValidationExample
-{
+    {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class MainPage : Page
-    {
-        public MainPage()
         {
-            this.InitializeComponent();
-        }
+        public MainPage( )
+            {
+            this.InitializeComponent( );
+            }
 
         private void Submit_Click(object sender, RoutedEventArgs e)
             {
 
             }
-    }
+        }
 
 
-    public class LoginValidator : AbstractValidator<Customer>
+    public class Customer : AbstractValidator<Customer>
         {
-        // the constructor
-        public LoginValidator( )
+
+        public Int32 AccountNumber { get; set; }
+        public int AccessCode { get; set; }
+        public string EmailAddress { get; set; }
+
+
+        }
+
+
+    public class CustomerValidator : AbstractValidator<Customer>
+        {
+        // instantiate the Customer class
+        public Customer customer = new Customer( );
+
+        // place validation rules within CustomerValidator constructor
+        public CustomerValidator( )
+
             // validation rules
             {
             RuleFor(customer => customer.AccountNumber).NotEmpty( );
@@ -49,4 +64,4 @@ namespace FluentValidationExample
 
         }
 
-}
+    }
