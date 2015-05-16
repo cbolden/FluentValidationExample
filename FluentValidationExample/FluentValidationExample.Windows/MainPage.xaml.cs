@@ -19,6 +19,7 @@ using FluentValidation;
 
 namespace FluentValidationExample
     {
+    #region MainPage
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -30,22 +31,31 @@ namespace FluentValidationExample
 
             }
 
-        public FluentValidation.Results.ValidationResult ValidationResults { get; set; }
 
-        //Submitbutton event handler
+        #region  Submitbutton event handler
         private void Submit_Button_Click(object sender, RoutedEventArgs e)
             {
+
             Customer customer = new Customer( );
             CustomerValidator validator = new CustomerValidator( );
-            ValidationResults = validator.Validate(customer);
-            validator.ValidateAndThrow(customer);
-
-            
+            IList<ValidationResult> results = validator.Validate(customer) ;
 
             }
-       
+        #endregion
 
-       
+
         }
+    #endregion
+
+    #region Customer class members
+    //the main class being validated
+    public class Customer
+        {
+        public int AccountNum { get; set; }
+        public int AccessCode { get; set; }
+        public string Email { get; set; }
+        public string EmailConfirm { get; set; }
+        }
+    #endregion
 
     }
